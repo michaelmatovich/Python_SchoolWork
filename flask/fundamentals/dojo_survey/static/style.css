@@ -1,0 +1,48 @@
+.box
+{
+    height: 50px;
+    width: 50px;
+    background-color: cornflowerblue;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col-left
+{
+    background-color:lightsteelblue;
+    flex: 1;
+}
+.columns
+{
+    
+}
+.col-right{
+    background-color: lightsteelblue;
+    flex: 1;
+}
+.col-right div{
+    margin: 1.75px;
+}
+.col-left div{
+    margin: 1.75px;
+}
+.container
+{
+    width: 70%;
+    min-height: 200 px;
+    background-color: slategrey;
+    margin: 0 auto;
+    padding: 5px;
+}
+.header{
+    width: 35%;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    color: cornflowerblue;
+}
+label{
+    color: white;
+}

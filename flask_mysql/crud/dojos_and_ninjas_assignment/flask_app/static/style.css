@@ -1,0 +1,95 @@
+h1{
+    color: lightskyblue;
+}
+
+.container
+{
+    width: 80%;
+    background-color: #34393e;
+    min-height: 50px;
+    margin: 0 auto;
+    padding: .5rem 1rem;
+}
+.main{
+    width: 40%;
+    background-color: #34393e;
+    padding: .5rem 1rem;
+
+}
+.flex
+{
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 10px;
+}
+.left-column{
+    padding: .5rem 1rem;
+}
+.right-column{
+    padding: .5rem 1rem;
+}
+label{
+    color: white;
+}
+#createbtn{
+    color: black;
+    background-color: lightskyblue;
+    padding: .25em .75em;
+    margin-left: 46px;
+}
+.box{
+    width: 80%;
+    background-color: aliceblue;
+    border: 2px black solid;
+    min-height: 50px;
+}
+input{
+    background-color: aliceblue;
+    
+    
+}
+select{
+    width: 100%;
+    background-color: aliceblue;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+#addninja{
+    color: floralwhite;
+}
+h3{
+    color: white;
+}
+.right-side{
+    flex: 1;
+    background-color: #34393e;
+    min-height: 50px;
+    
+}
+.left-side{
+    flex: 1;
+    background-color: #34393e;
+    min-height: 50px;
+    
+}
+.right-side input{
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+table{
+    color:white;
+    
+}
+tr{
+    color: white;
+    
+}
+#home{
+    color: white;
+}
+.home{
+    color:white;
+}
+
+

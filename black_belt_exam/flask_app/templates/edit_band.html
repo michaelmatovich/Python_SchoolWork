@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style2.css') }}">
+    <title>Edit Band</title>
+</head>
+<body>
+    <header class = "flex">
+        <h1>Rock On {{user.first_name}} {{user.last_name}}!!!</h1>
+        <div>
+        <a href="/mybands">My Bands</a> |
+        <a href="/dashboard">Dashboard</a> |
+        <a href="/logout">Logout</a>
+    </div>
+    </header>
+    <br>
+    <div class="main2">
+
+        <h2>Edit the {{ band.name}} </h2>
+        <br>
+        <form action="/edit/{{band.id}}/process" method="post">
+            
+                <p>Band Name:</p>
+                <input type="text" name = "name" value = "{{band.name}}">
+                <br><br>
+                <p>Music Genre:</p>
+                <input type="text" name = "genre" value = "{{band.genre}}">
+                <br><br>
+                <p>Home City:</p>
+                <input type="text" name= "city" value = "{{band.city}}">
+                <br><br>
+                <input type="submit" value = "Update">        
+            </form>
+    </div>
+    <br><br>
+    <div class="errors">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}                            
+                {% for message in messages %}            
+                    <p>{{message}}</p><br>                  
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+    </div>
+</body>
+</html>

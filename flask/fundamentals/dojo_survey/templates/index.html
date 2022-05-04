@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dojo Survey</h1>
+        </div>
+        <div>
+            <form action='/process' method='post'>
+                <div><label for='name'>Your Name:</label>
+                <input type='text' name='name'></div>
+                <br>
+                <div><label for='location'>Dojo Location:</label>
+                <select name="location">
+                    <option>Remote</option>
+                    <option>Bermuda Triangle</option>
+                    <option>The Pit of Despair</option>
+                    <option>Ohio</option>
+                </select></div>
+                <br>
+                <div><label for="fav_language">Favorite Language:</label>
+                <select name="fav_language">
+                    <option>Python</option>
+                    <option>C#</option>
+                    <option>JavaScript</option>
+                    <option>Pig Latin</option>
+                </select></div>
+                <br>
+                <div>
+                    <label for="fav_language">Comment (optional):</label>
+                    <br>
+                    <textarea name="comment" cols="60" rows="3"></textarea>
+                </div>
+                <br>
+                <div><input type='submit' value='Submit Survey'></div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

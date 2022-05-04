@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>big company directory</h1>
+    <ul>
+        {% for employee in all_employees %}
+        <li>{{employee.full_name}} - {{employee.department.name}} <a href='/employees/{{employee.id}}/delete'>delet this</a> <a href='/employees/{{employee.id}}/edit'>edit this</a></li>
+        {% endfor %}
+    </ul>
+
+    <form action='/employees/new' method="POST">
+        First name: <input type='text' name='first_name'><br>
+        Middle name: <input type='text' name='middle_name'><br>
+        Last name: <input type='text' name='last_name'><br>
+        Salary: <input type='number' name='salary'><br>
+        <select name='department_id'>
+            <option value='-1'>Select a department</option>
+            {% for department in all_departments %}
+            <option value='{{department.id}}'>{{department.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type='submit'>
+    </form>
+</body>
+</html>

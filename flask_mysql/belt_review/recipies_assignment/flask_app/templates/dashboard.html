@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="flex">
+        <h1>Welcome {{user.first_name}}</h1>
+        <div><a href="/recipes/new">Create </a><a href="/logout">Logout</a></div>
+    </header>
+    <br>
+    <div class = "main2">    
+    <h2>These are the recipes</h2>
+<br>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Under 30 Minutes?</th>
+                <th>Actions</th>
+            </thead>
+            
+            <tbody>
+                
+                {% for recipe in recipies %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                        <td>
+                            {% if recipe.is_under_30 == 1 %}
+                            <span>Yes</span>
+                            {% else %}
+                            <span>No</span>
+                            {% endif %}
+                        </td>
+                    <td>
+                        <a href="/recipes/{{recipe.id}}">View </a>
+                        {% if recipe.user_id == session.user_id %}
+                        <a href="/recipes/edit/{{recipe.id}}">Edit </a>
+                        <a href="/recipes/delete/{{recipe.id}}">Delete</a>
+                        {% endif %}
+                    </td>
+
+                </tr>
+                
+
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

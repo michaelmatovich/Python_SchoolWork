@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>View Recipe</title>
+</head>
+<body>
+    <header class="flex">
+        <h1>Welcome {{user.first_name}}</h1>
+        <div><a href="/dashboard">Dashboard </a><a href="/logout">Logout</a></div>
+    </header>
+    <br>
+    <h2>{{recipe.name}}</h2>
+    <div class="main2">
+        <h3>Description:</h3>
+        <p>{{recipe.description}}</p>
+        <h3>Under 30 minutes:</h3>
+        {% if recipe.is_under_30 == 0 %}
+        <p>No</p>
+        {% else %}
+        <p>Yes</p>
+        {% endif %}
+        <h3>Instructions:</h3>
+        <p>{{recipe.instruction}}</p>
+        <h3>Date Made:</h3>
+        <p>{{recipe.created_at}}</p>
+
+    </div>
+</body>
+</html>

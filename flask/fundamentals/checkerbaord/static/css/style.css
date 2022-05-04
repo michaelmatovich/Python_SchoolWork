@@ -1,0 +1,17 @@
+
+
+.box{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-color: {{ color1 }};
+    margin: 0;
+}
+.box2{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-color: {{ color2 }};
+    margin: 0;
+}
+

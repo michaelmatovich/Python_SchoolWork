@@ -1,0 +1,52 @@
+Dojos_And_Ninjas Queries
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Dojo1', NOW(), NOW());
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Dojo2', NOW(), NOW());
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Dojo3', NOW(), NOW());
+
+DELETE FROM dojos where id = 1;
+
+DELETE FROM dojos where id = 2;
+
+DELETE FROM dojos where id = 3;
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Joe', 'Armstrong', 33, NOW(), NOW(), 7);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Boboth', 'Ninjaman', 313, NOW(), NOW(), 7);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Chuck', 'Norris', 1000, NOW(), NOW(), 7);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Bruce', 'Lee', 33, NOW(), NOW(), 8);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Jackie', 'Chan', 43, NOW(), NOW(), 8);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('David', 'Carradine', 80, NOW(), NOW(), 8);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Bob', 'Bob', 23, NOW(), NOW(), 9);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Joe', 'Joe', 53, NOW(), NOW(), 9);
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojos_id)
+VALUES ('Scott', 'Scotts', 50, NOW(), NOW(), 9);
+
+SELECT * FROM ninjas
+WHERE dojos_id = 7;
+
+SELECT * FROM ninjas
+WHERE dojos_id = 9;
+
+SELECT * FROM dojos
+JOIN ninjas ON dojos_id = 9;

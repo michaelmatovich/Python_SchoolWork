@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Bands</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style2.css') }}">
+</head>
+<body>
+    <header class = "flex">
+        <h1>Rock On {{ user.first_name}} {{user.last_name}}!!!</h1>
+        <div>
+        <a href="/mybands">My Bands</a> |
+        <a href="/new/sighting">New Band</a> |
+        <a href="/logout">Logout</a>
+    </div>
+    </header>
+    <br>
+    <div class="main2">
+    <h2>Rock On {{ user.first_name }} {{ user.last_name }}</h2>
+    <br>
+    <h3>  All Bands</h3>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Band Name</th>
+                <th>Founding Member</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for band in all_bands %}
+            <tr>
+                <td>{{band.name}}</td>
+                <td>{{band.genre}}</td>
+                <td>{{band.city}}</td>
+                {% if band.user_id == user.id %}                        
+                <td><a href="/edit/{{band.id}}">edit</a> | <a href="band/delete/{{band.id}}">delete</a></td>
+                {% elif user.id not in band.members %}
+                <td><a href="/join/{{band.id}}">join</a></td>
+                {% else %}
+                <td><a href="/quit/{{band.id}}">quit</a></td>
+                {% endif %}
+            </tr>            
+            
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+</body>
+</html>

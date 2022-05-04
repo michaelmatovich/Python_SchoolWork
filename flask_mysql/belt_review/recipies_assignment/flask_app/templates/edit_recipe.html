@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>Create New Recipe</title>
+</head>
+<body>
+    <header class="flex">
+        <h1>Add New Recipe</h1>
+        <div><a href="/dashboard">Dashboard </a><a href="/logout">Logout</a></div>
+    </header>
+    <br>
+    <main class="main2">
+    <form action="/edit_recipe/{{recipe.id}}" method="post">
+        <p>Name</p>
+        <input type="text" name="name" value = "{{recipe.name}}">
+        <br><br>
+        <p>Description</p>
+        <input type="textarea" name = "description" value = "{{recipe.description}}">
+        
+        <br><br>
+        <p>Instructions</p>
+        <input type="textarea" name="instruction" cols="30" rows="3" value = "{{recipe.instruction}}"></textarea>
+        <br><br>
+        <p>Date Made On</p>
+        <input type="date" name="created_at" value = "{{recipe.created_at}}">
+        <br><br>
+        <p>Under 30 minutes?</p>
+        <input type="text" name = "is_under_30" value = "{{recipe.is_under_30}}">
+        <br><br>
+        <input type="submit" value="Edit">
+
+    </form>
+</main>
+</body>
+</html>

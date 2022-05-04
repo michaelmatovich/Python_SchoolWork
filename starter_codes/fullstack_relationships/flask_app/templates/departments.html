@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>big company departments</h1>
+    {% for department in all_departments %}
+    <h2>{{department.name}}</h2>
+    <p>Main office: {{department.location}}</p>
+    {% if department.employees | count == 0 %}
+    <p>No employees in {{department.name}}</p>
+    {% else %}
+    <p>Employees:</p>
+    <ul>
+        {% for employee in department.employees %}
+        <li>{{employee.first_name}} {{employee.last_name}}</li>
+        {% endfor %}
+    </ul>
+    <p>Department salary budget: {{department.calculate_total_employee_salary()}}</p>
+    {% endif %}
+    {% endfor %}
+    <a href='/departments/new'>add a department</a>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style2.css') }}">
+    <title>My Bands</title>
+</head>
+<body>
+    <header class = "flex">
+        <h1>Rock On {{user.first_name}} {{user.last_name}}!!!</h1>
+        <div>
+        <a href="/dashboard">Dashboard</a> |
+        <a href="/logout">Logout</a>
+    </div>
+    </header>
+    <br><br>
+    <div class="main2 flex2">
+        <div class="left-side">
+        <h2>My Bands:</h2>
+        <br>
+        {% for band in my_bands %}
+        <div class = "mybands">
+        <h3>{{ band.name }} </h3> -
+        <a href="/edit/{{band.id}}">edit</a> |
+        <a href="/band/delete/{{band.id}}">delete</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="right-side">
+        <h2>Bands Joined:</h2>
+        <br>
+        {% for band_joined in user.bands_joined %}
+        <div class= "bandsjoined">
+            <h3>{{ band_joined.name}}</h3>
+            <a href="/quit/{{band_joined.id}}">quit</a>
+        </div>
+        
+        {% endfor %}
+    </div>
+    </div>
+</body>
+</html>

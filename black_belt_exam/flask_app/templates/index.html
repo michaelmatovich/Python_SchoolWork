@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>LOGIN</title>
+</head>
+<body>
+    <main class = "flex">
+        <div class="spacer">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}                            
+                {% for message in messages %}            
+                    <p>{{message}}</p><br>                  
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        <div class="left-column container">
+            <h2>Register</h2><br>
+            <form action="/register" method = "post">
+            <p>First Name:</p>
+            <input type="text" name="first_name" class = "textbar">
+            <p>Last Name</p>
+            <input type="text" name="last_name" class = "textbar">
+            <p>Email:</p>
+            <input type="text" name="email" class = "textbar">
+            <p>Password:</p>
+            <input type="password" name="password" class = "textbar">
+            <p>Confirm Password:</p>
+            <input type="password" name="confirm_password" class = "textbar">
+            <br><br><br>
+            <input type="submit" value="Register" id="register">
+        </form>
+        </div>
+        <div class="right-column container">
+            <h2>Login</h2><br>
+            <form action="/login" method = "post">
+                <p>Email:</p>
+                <input type="text" name="email" class = "textbar2">
+                <p>Password:</p>
+                <input type="password" name="password" class = "textbar2">
+                <br><br><br>
+                <input type="submit" value = "Login" id="login">
+            </form>
+        </div>
+        <div class="spacer"></div>
+
+    </main>
+</body>
+</html>

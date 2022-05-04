@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>TV Show</title>
+</head>
+<body>
+    <header class = "flex">
+        <h1>Show Details</h1>
+        <div>
+        <a href="/dashboard">TV Shows</a> |
+        <a href="/logout">Logout</a>
+    </div>
+    </header>
+    <br>
+    <div class="main2">
+        <h2>{{show.title}}</h2>
+        <br>
+        <h3>Network: {{show.network}}</h3>
+        <br>
+        <h3>Release Date: {{show.release_date}}</h3>
+        <br>
+        <h3>Description:</h3>
+        <p>{{show.description}}</p>
+        <br><br>
+        <p>Posted By: {{show.posted_by.first_name}} {{show.posted_by.last_name}}</p>
+        <br>
+    </div>
+</body>
+</html>
